@@ -1,11 +1,4 @@
-"""
-OBJETIVO: 
-    - Extraer el precio y el titulo de los anuncios en la pagina de OLX.
-    - Aprender a utilizar la espera por eventos de Selenium.
-    - Aprender a optimizar el tiempo de ejecucion de nuestras extracciones por Selenium de manera inteligente
-CREADO POR: LEONARDO KUFFO
-ULTIMA VEZ EDITADO: 16 ABRIL 2020
-"""
+
 import random
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -22,7 +15,7 @@ col = db['todo_selenium']
 
 # Definimos el User Agent en Selenium utilizando la clase Options
 opts = Options()
-opts.add_argument("user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/71.0.3578.80 Chrome/71.0.3578.80 Safari/537.36")
+opts.add_argument("user-agent=...")
 
 
 # Instancio el driver de selenium que va a controlar el navegador
@@ -88,13 +81,8 @@ for precio in lista_precios:
     #print (descripcion)
 
 
-# Existen mas eventos que yo puedo esperar (VER RECURSOS)
 
-#
-# C:\Users\bielo\PycharmProjects\untitled\venv\Scripts\python.exe C:/Users/bielo/PycharmProjects/untitled/dancol_1.py
-# Message: stale element reference: element is not attached to the page document
-#   (Session info: chrome=83.0.4103.116)
-#
+
 # Nombre Producto: Quality 2.0 (2 plazas)
 # Precio normal: $U19.958,64
 # Precio sin descuento: $U38.382,00
