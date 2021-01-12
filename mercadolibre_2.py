@@ -1,14 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-OBJETIVO: 
-    - Extraer el precio, titulo y descripcion de productos en Mercado Libre.
-    - Aprender a realizar extracciones verticales y horizontales con Selenium.
-    - Demostrar que Selenium no es optimo para realizar extracciones que requieren traversar mucho a traves de varias pagina de una web
-    - Aprender a manejar el "retroceso" del navegador
-    - Aprender a definir user_agents en Selenium
-CREADO POR: LEONARDO KUFFO
-ULTIMA VEZ EDITADO: 16 ABRIL 2020
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -17,7 +7,7 @@ from selenium.webdriver.chrome.options import Options
 
 # Definimos el User Agent en Selenium utilizando la clase Options
 opts = Options()
-opts.add_argument("user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/71.0.3578.80 Chrome/71.0.3578.80 Safari/537.36")
+opts.add_argument("user-agent=...")
 driver = webdriver.Chrome('./chromedriver.exe', chrome_options=opts) # REMPLAZA AQUI EL NOMBRE DE TU CHROME DRIVER
 
 #URL SEMILLA
@@ -36,9 +26,7 @@ while PAGINACION_MAX > PAGINACION_ACTUAL:
   links_de_la_pagina = []
   for a_link in links_productos:
     links_de_la_pagina.append(a_link.get_attribute("href"))
-  # Q: Pero leaonrdo, porque no hiciste for link in link_productos, y simplemente ibas y volvias haciendo click en el contenedor que me lleva a la otra pagina?
-  # A: Porque al yo irme y volver, pierdo la referencia de links_productos que tuve inicialmente. Y selenium me daria error porque le intentaria dar click a algo que no existe en el DOM actual.
-  # Es por esto que, la mejor estrategia es obtener todos los links como cadenas de texto y luego iterarlos.
+ 
 
   for link in links_de_la_pagina:
 
